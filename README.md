@@ -3,7 +3,7 @@
 ## Important Warning ! :
 
 We have the right to take legal action in the event that the application is shared on the internet, distribution, claiming right ownership, selling it for a fee.
-These codes are shared only for you to learn the SQLite structure.
+These codes are shared only for you to learn the Django.
 Anyone who have access to the codes is agreed to have unconditionally accepted these terms.
 
 All Rights Reserved.
