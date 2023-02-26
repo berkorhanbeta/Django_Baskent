@@ -1,0 +1,39 @@
+.sidebar {
+    height:100%;
+    width:20%;
+    position: fixed;
+    z-index:1;
+    top:0;
+    left:0;
+    background-color:#282828;
+    overflow-x:hidden;
+    padding-top:0px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #04AA6D;
+    color: #f1f1f1;
+    text-decoration: none;
+  }
+
+  .sidebar h4 {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+  }
+
+.main{
+    height: 100%;
+    width: 80%;
+    margin: 0 20%;
+}
+
+

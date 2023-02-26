@@ -1,0 +1,75 @@
+{% extends 'deneme.html' %}
+{% block title %}
+Leave a Message
+{% endblock %}
+ 
+{% block content %}
+
+
+
+<div class="w3-twothird">
+	<div class="w3-container w3-card w3-white w3-margin-bottom">
+		<h2 class="w3-text-grey w3-padding-16">
+			<i class="fa fa-comment-o fa-fw w3-margin-left w3-xxlarge w3-text-teal"></i>
+				Your Message to Board
+		</h2>
+		
+
+		<form method="post" action="/form/" class="form-group">
+				{% csrf_token %}
+				<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+						</div>
+							{{ form.fullName }}
+				</div>
+
+				<div class="input-group mb-3">
+						<div class="input-group-prepend">
+								<span class="input-group-text" id="inputGroup-sizing-default">E-Mail</span>
+						</div>
+							{{ form.mailAddress }}
+				</div>
+
+				<div class="input-group mb-3">
+						<div class="input-group-prepend">
+								<span class="input-group-text" id="inputGroup-sizing-default">Message</span>
+						</div>
+							{{ form.uMessage }}
+				</div>
+
+				<button value="save" name="save" type="submit" class="btn btn-success">Send</button>
+			</form>
+			<hr>
+	</div>
+
+
+	<!-- If new message submitted from the form, Then show this section -->
+	{% if newMessage != None %}
+	<div class="alert alert-dark" role="alert">
+		Successful!
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+	  </div>
+	<div class="w3-container w3-card w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Thank You, {{ newMessage.fullName }}</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>We will add your message to our board soon as possible.</b></h5>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>E-Mail Address</b></h5>
+          <h6 class="w3-text-teal">{{ newMessage.mailAddress }}</h6>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Your Message</b></h5>
+          <p>{{ newMessage.uMessage }}</p>
+		  <hr>
+        </div>
+      </div>
+    </div>
+	{% endif %}
+</div>
+{% endblock %}
