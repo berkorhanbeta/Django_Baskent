@@ -1,0 +1,24 @@
+{% extends 'deneme.html' %}
+
+{% block title %}
+Second
+{% endblock %}
+
+{% block content %}
+
+    
+        
+        <div class="w3-twothird">
+          <div class="w3-container w3-card w3-white w3-margin-bottom">
+            <!-- Showing playstore.html file in Second page -->
+              {% include 'include/playstore.html' %}
+              <br>
+            </div>
+
+            <div class="w3-container w3-card w3-white">
+              {% include 'include/appstore.html' %}
+            </div>
+        
+        </div>
+
+{% endblock %}

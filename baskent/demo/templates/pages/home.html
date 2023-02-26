@@ -1,0 +1,45 @@
+{% extends 'deneme.html' %}
+
+<!-- Page Title -->
+{% block title %}
+Home
+{% endblock %}
+
+
+<!-- Main Content-->
+{% block content %}
+
+    <div class="w3-twothird">
+        <div class="w3-container w3-card w3-white w3-margin-bottom">
+            <h2 class="w3-text-grey w3-padding-16">
+                <i class="fa fa-comment-o fa-fw w3-margin-left w3-xxlarge w3-text-teal"></i>
+                    Message Board From Visitors
+            </h2>
+
+            <!-- Table for Messages -->
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">E-Mail Address</th>
+                        <th scope="col">Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Creating for loop for each elements in Database -->
+                    {% for item in dbData %}
+                        <tr>
+                            <td>{{item.fullName}}</td>
+                            <td>{{item.mailAddress}}</td>
+                            <td>{{item.uMessage}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <hr>
+        </div>
+    </div>
+
+
+
+{% endblock %}
